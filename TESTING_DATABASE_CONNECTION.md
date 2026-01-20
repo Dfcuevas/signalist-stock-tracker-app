@@ -122,10 +122,6 @@ Descarga desde: https://www.mongodb.com/try/download/compass
 
 Desde tu archivo `.env`:
 
-```
-mongodb+srv://ingdcuevas:BvVQ0ilImPSXKWZi@cluster0.rutroe0.mongodb.net/?appName=Cluster0
-```
-
 #### Paso 3: Pega la URI en MongoDB Compass
 
 1. Abre MongoDB Compass
