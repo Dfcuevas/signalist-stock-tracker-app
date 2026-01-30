@@ -41,10 +41,14 @@ export const sendSignUpEmail = inngest.createFunction(
         "Thanks for joining Signalist. You now have the tools to track markets and make smarter moves.";
       //! Email sending logic.
       const {
-        data: { email, name },
+        data: { email, fullName },
       } = event;
 
-      return await sendWelcomeEmail({ email, name, intro: introText });
+      return await sendWelcomeEmail({
+        email,
+        name: fullName,
+        intro: introText,
+      });
     });
     return {
       success: true,
