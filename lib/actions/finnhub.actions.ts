@@ -109,7 +109,7 @@ export async function getNews(
 export const searchStocks = cache(
   async (query?: string): Promise<StockWithWatchlistStatus[]> => {
     try {
-      const token = process.env.FINNHUB_API_KEY ?? NEXT_PUBLIC_FINNHUB_API_KEY;
+      const token = process.env.FINNHUB_API_KEY ?? FINNHUB_API_KEY;
       if (!token) {
         // If no token, log and return empty to avoid throwing per requirements
         console.error(
