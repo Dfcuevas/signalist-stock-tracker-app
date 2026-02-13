@@ -70,9 +70,9 @@ const SearchCommand = ({
   return (
     <>
       {renderAs === "text" ? (
-        <span onClick={() => setOpen(true)} className="search-text">
+        <button type="button" onClick={() => setOpen(true)} className="search-text">
           {label}
-        </span>
+        </button>
       ) : (
         <Button onClick={() => setOpen(true)} className="search-text">
           {label}
