@@ -76,10 +76,10 @@ export const sendDailyNewsSummary = inngest.createFunction(
     // Step 2. Fetch personalized news for each user
     const results = await step.run("fetch-user-news", async () => {
       const perUser: Array<{
-        user: UserForNewsEmail;
+        user: User;
         articles: MarketNewsArticle[];
       }> = [];
-      for (const user of users as UserForNewsEmail[]) {
+      for (const user of users as User[]) {
         try {
           const symbols = await getWatchlistSymbolsByEmail(user.email);
           let articles = await getNews(symbols);
@@ -100,7 +100,7 @@ export const sendDailyNewsSummary = inngest.createFunction(
     });
     // Step 3. Summarize news via AI for each user
     const userNewsSummaries: {
-      user: UserForNewsEmail;
+      user: User;
       newsContent: string | null;
     }[] = [];
 
